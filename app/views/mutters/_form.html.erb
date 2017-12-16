@@ -1,0 +1,36 @@
+<header class="header">
+    <nav>
+        <ul class="top_menu clearfix">
+          <li><a href="/mutters">ホーム</a></li>
+          <li><a href="/mutters/new">新規投稿</a></li>
+        </ul>
+      </nav>
+</header>
+
+<article class="content">
+
+<%= form_with(model: @mutter, local: true ,url: choose_new_or_edit) do |form| %>
+  <% if @mutter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @mutter.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @mutter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="mutter_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "つぶやき一覧へもどる", mutters_path %>
+
+<footer class="footer">
+  <p>yusuke miyazaki</p>
+</footer>

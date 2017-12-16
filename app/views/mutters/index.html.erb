@@ -1,0 +1,35 @@
+<article class="content">
+
+<!-- <h1>つぶやきアプリ</h1> -->
+
+<%= image_tag 'photo.jpg', :size =>'700x150'%>
+
+<h2 class="container">つぶやきアプリ<span class="label label-default">new!!</span></h2>
+<br>
+      <ul class="bg-success row">
+          <li class="col-sm-6 col-md-3">ルール① 毎日つぶやく</li>
+          <li class="col-sm-6 col-md-3">ルール② ポジティブなことをつぶやく</li>
+          <li class="col-sm-6 col-md-3">ルール③ 毎日見返す</li>
+          <li class="col-sm-6 col-md-3">ルール④ 過去の自分を超える！</li>
+      </ul>
+
+<br>
+<p><%= notice %></p>
+<br>
+<table class="table">
+  <tr>
+    <th>過去つぶやき一覧</th></th>
+  </tr>
+
+<% @mutters.each do |mutter| %>
+  <tr>
+    <td><%= mutter.content %></td>
+    <td class="btn btn-warning"><%= link_to "編集", edit_mutter_path(mutter.id) %></td>
+    <td class="btn btn-danger"><%= link_to '削除', mutter_path(mutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+<br>
+<%= link_to '新しくつぶやく', new_mutter_path %>
+
+</article>

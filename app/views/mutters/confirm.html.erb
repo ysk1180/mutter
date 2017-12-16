@@ -1,0 +1,17 @@
+
+<article class="content">
+
+<h3>確認ページ</h3>
+
+<%= form_with(model: @mutter, url: mutters_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>content:<%= @mutter.content %></p>
+  <%= form.submit  "登録" %>
+<% end %>
+
+<%= form_with(model: @mutter, url: new_mutter_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる",name: 'back' %>
+<% end %>
+

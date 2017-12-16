@@ -1,0 +1,81 @@
+// Place all the styles related to the mutters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  background-color: #F5B4B3;
+  height: 70px;
+  font-size: 1.5rem;
+}
+
+.top_menu li {
+  float: left;
+  padding: 15px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.top_menu li a {
+  color: #ff8;
+  text-decoration: none;
+}
+
+.top_menu li a:hover {
+  text-decoration: underline;
+}
+
+.content{
+  width: 660px;
+  margin-left:20px;
+  float: left;
+  font-size: 1.5rem;
+  text-align: center;
+  overflow: scroll;
+  height: 550px;
+}
+
+.footer{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4D4D4D;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body{
+  height: 300px;
+  padding-bottom: 100px;
+}
