@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'mutters#index'
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   resources :mutters do
     collection do
       post :confirm
