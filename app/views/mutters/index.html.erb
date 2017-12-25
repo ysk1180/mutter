@@ -24,6 +24,7 @@
 <% @mutters.each do |mutter| %>
   <tr>
     <td><%= mutter.content %></td>
+    <td class="btn btn-warning"><%= link_to "詳細", mutter_path(mutter.id) %></td>
     <td class="btn btn-warning"><%= link_to "編集", edit_mutter_path(mutter.id) %></td>
     <td class="btn btn-danger"><%= link_to '削除', mutter_path(mutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>

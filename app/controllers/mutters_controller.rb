@@ -16,6 +16,7 @@ class MuttersController < ApplicationController
 
   def create
     @mutter = Mutter.new(mutter_params)
+    @mutter.user_id = current_user.id
     if @mutter.save
       redirect_to mutters_path, notice: "つぶやきました！"
     else
@@ -44,9 +45,14 @@ class MuttersController < ApplicationController
     end
   end
 
+  def show
+   @favorite = current_user.favorites.find_by(mutter_id: @mutter.id)
+  end
+
   private
   def mutter_params
-    params.require(:mutter).permit(:content)
+    # params[:mutter]
+    params.require(:mutter).permit(:content, :id)
   end
 
   def set_mutter
