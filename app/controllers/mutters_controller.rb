@@ -1,5 +1,5 @@
 class MuttersController < ApplicationController
-  before_action :set_mutter, only: [:edit, :update, :destroy]
+  before_action :set_mutter, only: [:edit, :update, :destroy, :show]
   before_action :no_log_in, only: [:new, :edit, :show]
 
   def index
