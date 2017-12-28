@@ -25,9 +25,11 @@
   <tr>
     <td><%= mutter.content %></td>
     <td class="btn btn-success"><%= link_to "詳細", mutter_path(mutter.id) %></td>
+    <% unless current_user == nil %>
     <% if current_user.id == mutter.user_id %>
     <td class="btn btn-warning"><%= link_to "編集", edit_mutter_path(mutter.id) %></td>
     <td class="btn btn-danger"><%= link_to '削除', mutter_path(mutter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    <% end %>
     <% end %>
   </tr>
 <% end %>
