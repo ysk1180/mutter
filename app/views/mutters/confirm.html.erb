@@ -7,6 +7,13 @@
   <%= form.hidden_field :content %>
 
   <p>content:<%= @mutter.content %></p>
+
+  <% if @mutter.image.present? %>
+  <p>image:</p>
+  <%= hidden_field_tag :"cache[image]",@mutter.image.cache_name %>
+  <%= image_tag(@mutter.image.url) %>
+  <% end %>
+  <br>
   <%= form.submit  "登録" %>
 <% end %>
 
@@ -14,4 +21,3 @@
   <%= form.hidden_field :content %>
   <%= form.submit "もどる",name: 'back' %>
 <% end %>
-

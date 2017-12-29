@@ -45,9 +45,11 @@
         </ul>
       </nav>
     </header> -->
-    <% flash.each do |key, value| %>
+    <!-- 以下、コメントが二重に出てたから削除 -->
+    <!-- <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <% end %> -->
+    <!-- 以上 -->
     <%= yield %>
     <footer class="footer">
     <p>yusuke miyazaki</p>
