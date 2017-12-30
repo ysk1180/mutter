@@ -17,7 +17,9 @@ class MuttersController < ApplicationController
   def create
     @mutter = Mutter.new(mutter_params)
     @mutter.user_id = current_user.id
-    @mutter.image.retrieve_from_cache! params[:cache][:image]
+    unless params[:cache] == nil
+      @mutter.image.retrieve_from_cache! params[:cache][:image]
+    end
     if @mutter.save
       redirect_to mutters_path, notice: "つぶやきました！"
     else

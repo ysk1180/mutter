@@ -10,8 +10,8 @@
 
   <% if @mutter.image.present? %>
   <p>image:</p>
-  <%= hidden_field_tag :"cache[image]",@mutter.image.cache_name %>
   <%= image_tag(@mutter.image.url) %>
+  <%= hidden_field_tag :"cache[image]", @mutter.image.cache_name %>
   <% end %>
   <br>
   <%= form.submit  "登録" %>
