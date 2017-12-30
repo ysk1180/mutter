@@ -3,12 +3,14 @@
 <p>メールアドレス: <%= @user.email %></p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>ユーザー画像:</strong>
   <%= image_tag @user.image_url if @user.image.present? %>
 </p>
 
+<%= link_to "ユーザー情報を編集する", edit_user_path(@user.id) %>
+<br>
 <h1>お気に入りつぶやき一覧</h1>
 
-<% @favorite_blogs.each do |a| %>
+<% @favorite_mutters.each do |a| %>
 <%= a.mutter.content %>
 <% end %>

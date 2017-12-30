@@ -9,6 +9,7 @@ ja:
       mutter:
         title: "タイトル"
         content: "内容"
+        image: "画像"
       user:
         title: "タイトル"
         name: "名前"
@@ -17,6 +18,7 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        image: "ユーザー画像"
         # 以上追記
     errors:
       messages:

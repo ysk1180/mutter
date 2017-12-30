@@ -3,7 +3,7 @@
 <article class="content">
 
 <h2>編集する</h2>
-
+<br>
 <%= form_with(model: @mutter, local: true ,url: choose_new_or_edit) do |form| %>
   <% if @mutter.errors.any? %>
     <div id="error_explanation">
@@ -21,12 +21,14 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <br>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, id: :mutter_image %>
     <%= form.hidden_field :image_cache %>
   </div>
+  <br>
   <%= form.submit %>
 <% end %>
-
+<br>
 <%= link_to "つぶやき一覧へもどる", mutters_path %>
