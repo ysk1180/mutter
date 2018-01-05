@@ -54,6 +54,7 @@ group :development do
   gem "binding_of_caller"
   gem 'pry-rails'
   gem 'letter_opener_web'
+  gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

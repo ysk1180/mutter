@@ -21,6 +21,7 @@ class MuttersController < ApplicationController
       @mutter.image.retrieve_from_cache! params[:cache][:image]
     end
     if @mutter.save
+      ContactMailer.contact_mail(@mutter).deliver
       redirect_to mutters_path, notice: "つぶやきました！"
     else
       render 'new'
